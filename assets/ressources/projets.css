@@ -1,0 +1,239 @@
+
+:root {
+    --main-orange: #ff6a00;
+    --blue-primary: #060054;
+
+    --orange-secondary: #ff815b;
+    --blue-secondary: #2a2850;
+
+    --gray-level-1: #1A202C;
+    --grey-level-2: #333;
+    --grey-level-3: #5b5963;;
+    --grey-level-4: #718096;
+    --grey-level-5: #A0AEC0;
+    --grey-level-6: #CBD5E0;
+    --grey-level-7: #f5f5f5;;
+    --grey-level-8: #EDF2F7;
+    --grey-level-9: #F7FAFC;
+
+    --h1-size: 2em;
+    --h2-size: 1.5em;
+    --h3-size: 1.2em;
+    --p-size: 1em;
+
+    --radius-size: 6px;
+}
+
+
+/* PAGE PROJETS */
+
+/* HERO HEADER */
+
+.hero_header2 {
+    background-image: url(images/travail.jpg);
+    background-size: cover;
+    background-position-y: 65%;
+
+    border-radius: var(--radius-size);
+
+    height: 40em;
+    width: 100%;
+
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1075px) {
+    .filter2>h1{
+        font-size: 80px;
+    }
+
+    
+}
+
+@media screen and (max-width:860px) {
+    .filter2>h1{
+        font-size: 70px;
+    }
+
+    
+
+    .hero_header2 {
+        height: 25em;
+    }
+
+    
+
+    
+}
+
+@media screen and (max-width:800px) {
+    
+
+    header>nav>ul>li {
+        font-size: 13px;
+    }
+
+    
+}
+
+@media screen and (max-width:760px) {
+    #projets>nav>ul>li>p {
+        left: 6% !important;
+    }
+
+    .hero_header2 {
+        height: 22em;
+    }
+}
+
+.filter2>h1 {
+    font-size: 60px;
+}
+
+@media screen and (max-width:700px) {
+    .hero_header2 {
+        height: 30em;
+    }
+
+    
+
+}
+
+@media screen and (max-width:660px) {
+    .filter2>h1 {
+        font-size: 45px;
+        margin-top: 2em;
+    }
+
+    .hero_header2 {
+        height: 20em;
+    }
+
+    header>nav>ul>li {
+        font-size: 11px;
+    }
+
+    
+
+    footer {
+        font-size: 0.8em;
+        height: 1em;
+    }
+
+    header>img {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+@media screen and (max-width:550px) {
+
+    header>nav {
+        margin-right: -30px;
+    }
+
+    header>img {
+        margin-left: -30px;
+    }
+
+    .filter2>h1 {
+        font-size: 35px;
+    }
+
+    #formation>#txt>h1 {
+        font-size: 1.2em;
+    }
+
+    #formation {
+        padding: 35px;
+    }
+
+    #projets {
+        padding: 2em;
+    }
+
+    #projets>h1 {
+        font-size: 1.2em;
+    }
+
+    .hero_header2 {
+        height: 18em;
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    .hero_header2 {
+        height: 14em;   
+    }
+
+    .filter2>h1 {
+        font-size: 30px;
+        margin-top: 4em;
+    }
+
+    header>nav>ul>li {
+        font-size: 9px;
+    }
+
+    #projets {
+        padding: 1em;
+    }
+
+    #formation {
+        padding: 1em;
+    }
+
+    #formation>#txt>h1 {
+        font-size: 1em;
+    }
+
+    #formation>#txt>p {
+        font-size: 0.7em;
+    }
+
+    #projets>h1 {
+        font-size: 1em;
+    }
+
+    #projets>nav>ul>li>p {
+        font-size: 0.7em;
+
+    }
+
+
+    header>img {
+        width: 50px;
+        height: 50px;
+    }
+
+    header>nav>ul>li:not(.button_top_right), header>nav>ul>li.button_top_right>a {
+        padding: 0.8em 1em;
+    }
+
+    #projets>nav>ul>li>p {
+        left: 8% !important;
+    }
+    
+
+    header>nav>ul>li.button_top_right {
+        margin-left: 1em;
+    } 
+}
