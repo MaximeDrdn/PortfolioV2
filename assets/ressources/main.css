@@ -137,6 +137,7 @@ header {
 
 .header-transparent ul li a {
     color: white;
+    text-decoration: none;
 }
 
 .header-transparent ul li a:hover {
@@ -144,8 +145,7 @@ header {
 }
 
 .header-transparent ul li .menu::before, .header-transparent ul li .menu::after {
-    background-color: white;
-
+    background-color: white;;
 }
 
 .header-white {
