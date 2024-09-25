@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var burgerMenu = document.getElementById('burger-menu');
     var menuItems = document.getElementById('menu-items');
     const formation_article_content = document.getElementById('formation_article_content');
+    var menuLinks = document.querySelectorAll('#menu-items a');
     
 
     window.addEventListener('resize', checkWindowSize);
@@ -51,14 +52,23 @@ document.addEventListener("DOMContentLoaded", function() {
         header.classList.add('header-transparent');
         burgerMenu.classList.add('burger-menu-white');
     }
+
+
   
 
     function checkWindowSize() {
 
         if (window.innerWidth < 1075) {
             formation_article_content.classList.remove('width60');
+            menuLinks.forEach(function(link) {
+                link.classList.remove('menu');
+            });
+
         } else {
             formation_article_content.classList.add('width60');
+            menuLinks.forEach(function(link) {
+                link.classList.add('menu');
+            });
         }
     }
  
