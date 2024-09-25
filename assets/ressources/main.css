@@ -143,7 +143,7 @@ header {
     color: var(--grey-level-6);
 }
 
-.header-transparent ul li a::before, .header-transparent ul li a::after {
+.header-transparent ul li .menu::before, .header-transparent ul li .menu::after {
     background-color: white;
 
 }
@@ -161,7 +161,7 @@ header {
     color: black;
 }
 
-.header-white ul li a::before, .header-white ul li a::after {
+.header-white ul li .menu::before, .header-white ul li .menu::after {
     background-color: black;
 
 }
@@ -983,6 +983,28 @@ footer div {
 
 }
 
+
+@media screen and (max-width:370px) {
+    .section__projets .title h2 {
+        font-size: 35px;
+    }
+}
+
+@media screen and (max-width:355px) {
+    .section__formation .title h2 {
+        font-size: 30px;
+    }
+
+    .section__presentation .title h2 {
+        font-size: 35px;
+    }
+
+    .section__projets .title h2 {
+        font-size: 30px;
+    }
+}
+
+
 @media screen and (max-width:330px) {
     .hero_header {
         height: 10em;
@@ -1006,7 +1028,7 @@ footer div {
         font-size: 30px;
     }
 
-    .section__presentation .title span {
+    .title span {
         font-size: 14px;
     }
 
@@ -1041,5 +1063,11 @@ footer div {
     footer .footer_container nav ul li a img {
         width: 18px;
         height: 18px;
+    }
+
+    .title {
+        padding: 0em;
+        padding-top: 1em;
+        padding-bottom: 1em;
     }
 }
