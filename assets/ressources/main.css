@@ -451,29 +451,14 @@ p a.link:hover::after {
     background-color: black;
 }
 
-.imageDeProjet img{
-    width: 20em;
-    height: 12em;
-}
+
 
 
 /*Liste de projet*/
 
-.liste_projets_container {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 8em;
-}
 
-.liste_projets_container ul {
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-}
+
+
 
 .liste_projets_container ul li {
     height: 10em;
@@ -578,7 +563,7 @@ footer div {
         display: none;
     }
 
-    .bigtitle2 h2 {
+    .section__formation .title h2 {
         font-size: 80px;
     }
 
@@ -656,9 +641,7 @@ footer div {
     }
     
 
-    .bigtitle2 h2 {
-        font-size: 60px;
-    }
+    
 
     #img_space {
         height: 360px;
@@ -687,7 +670,7 @@ footer div {
         font-size: 13px;
     }
 
-    .section__presentation .title h2 {
+    .title h2 {
         font-size: 80px;
     }
 
@@ -705,6 +688,10 @@ footer div {
 
     #formation>#txt {
         width: 100%;
+    }
+
+    .section__formation .title h2 {
+        font-size: 60px;
     }
     
 }
@@ -733,11 +720,11 @@ footer div {
         height: 75px;
     }
 
-    .section__presentation .title h2 {
+    .title h2 {
         font-size: 60px;
     }
 
-    .section__presentation .title span {
+    .title span {
         font-size: 20px;
     }
 
@@ -803,6 +790,10 @@ footer div {
     #projets>nav>ul>li>p {
         font-size: 0.8em;
     }
+
+    .section__formation .title h2 {
+        font-size: 45px;
+    }
 }
 
 @media screen and (max-width:550px) {
@@ -812,11 +803,11 @@ footer div {
         font-size: 35px;
     }
 
-    .section__presentation .title h2 {
+    .title h2 {
         font-size: 45px;
     }
 
-    .section__presentation .title span {
+    .title span {
         font-size: 18px;
     }
 
@@ -843,6 +834,10 @@ footer div {
 
     #projets>h1 {
         font-size: 1.2em;
+    }
+
+    .bigtitle2 h2 {
+        font-size: 42px;
     }
 
 }
@@ -909,6 +904,20 @@ footer div {
         left: 8% !important;
     }
 
+    .section__formation .title h2 {
+        font-size: 40px;
+    }
+
+}
+
+@media screen and (max-width:460px) {
+    .section__projets .title h2 {
+        font-size: 40px;
+    }
+
+    .section__formation .title h2 {
+        font-size: 35px;
+    }
 }
 
 
@@ -936,7 +945,7 @@ footer div {
         font-size: 25px;
     }
 
-    .section__presentation .title {
+    .title {
         padding: 1.5em;
     }
 
@@ -944,7 +953,7 @@ footer div {
         font-size: 40px;
     }
 
-    .section__presentation .title span {
+    .title span {
         font-size: 16px;
     }
 
