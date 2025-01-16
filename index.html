@@ -9,6 +9,16 @@
 
     <link rel="stylesheet" href="assets/ressources/main.css">
     <link rel="icon" type="image/x-icon" href="assets/ressources/images/hello_laptop.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/ressources/luge.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/letterizejs@2.0.0/letterize.min.js"></script>
+
+
+
+
 </head>
 
 <body>
@@ -53,13 +63,15 @@
         <div class="hero_header">
             <div class="filter">
                 <div class="grey_filter"></div>
-                <h1>Maxime Dardenne</h1>
+                <h1 id="title">
+                    <span>Maxime Dardenne</span>
+                </h1>
             </div>
             
         </div>
 
         <section class="section__presentation"  id="presentation">
-            <div class="title">
+            <div data-lg-reveal="fade-to-top" class="title">
                 <h2>Qui suis-je ?</h2>
                 <span>Présentation</span>
             </div>
@@ -68,16 +80,15 @@
                 <div class="container">
                     <div class="article_content">
                         <p class="article_content_text">
-                            Étant actuellement étudiant en deuxième année de <a class="link" href="https://82796d45-f80d-4ab3-ab44-e35c24ccd752.filesusr.com/ugd/357eaa_a4090dba751442d9863ebd06537d0a44.pdf">BUT Informatique</a> à <a class="link" href="https://iut-lannion.univ-rennes.fr/">l'IUT de Lannion</a>, je cherche à développer mes compétences 
-                            dans différents domaines informatiques. <br><br>C'est à l'âge de 14 ans, lors d'un stage de découverte dans l'entreprise LDLC à Lyon, que je découvre 
+                            Étant actuellement étudiant en troisième année de <a class="link" href="https://82796d45-f80d-4ab3-ab44-e35c24ccd752.filesusr.com/ugd/357eaa_a4090dba751442d9863ebd06537d0a44.pdf">BUT Informatique</a> à <a class="link" href="https://iut-lannion.univ-rennes.fr/">l'IUT de Lannion</a>, j'ai 
+                            décidé de choisir la voie de l'alternance en parcours A. Ce parcours est spécialisé dans le développement de logiciel et d'application web. <br><br>Je suis alternant au Conseil Départemental du Jura où j'ai l'opportunité de travailler sur des projets internes pour l'ensemble du départemment.<br><br>C'est à l'âge de 14 ans, lors d'un stage de découverte dans l'entreprise LDLC à Lyon, que je découvre 
                             l'intégration et le développement informatique. C'est alors que je décide de me lancer dans des études d'informatique.<br><br>
-                            Aujourd'hui à la recherche d'une alternance, je cherche à démontrer mes compétences et les améliorer pour intégrer rapidement
-                            le monde profesionnel. <br><br>
-                            Suite à ma formation, selon les opportunités qui me sont présentées, j'aimerais trouver un poste en tant que développeur web ou
-                            continuer mes études en intégrant une école d'ingénieur.
+                            Aujourd'hui, je cherche à démontrer mes compétences et les améliorer en milieu profesionnel, d'où mon choix pour la formation en alternance. <br><br>
+                            Suite à ma formation, selon les opportunités qui me sont présentées, j'aimerais
+                            continuer mes études en intégrant une école d'ingénieur toujours en alternance.
                         </p>
                     </div>
-                    <div class="dl_container">
+                    <div class="dl_container" data-lg-reveal="fade-to-right">
                         <div id="avatar_form">
                             <div id="img_form">
                                 <img id="img_gowork" alt="Avatar Maxime Dardenne" src="assets/ressources/images/go_work.png">
@@ -85,7 +96,14 @@
                         </div>
                         <div class="dl_content">
                             <p id="cv_warn">Vous trouverez ci-joint mon CV à télécharger.</p>
-                            <a class="download_button" href="assets/ressources/Maxime_Dardenne_Curriculum_Vitae.pdf" download="Maxime_Dardenne_Curriculum_Vitae.pdf" target="_blank">Télécharger mon CV</a>
+                            
+                            <a class="download_button" href="assets/ressources/Maxime_Dardenne_Curriculum_Vitae.pdf" download="Maxime_Dardenne_Curriculum_Vitae.pdf" target="_blank">
+                                <button>
+                                    <span class="text">Télécharger mon CV</span>
+                                </button>
+                            </a>
+                            
+
                         </div>
                     </div>
                 </div>
@@ -95,7 +113,7 @@
 
         <section class="section__formation"  id="ma_formation">
 
-            <div class="title">
+            <div data-lg-reveal="fade-to-top" class="title">
                 <h2>Mon parcours</h2>
                 <span>Ma formation</span>
             </div>
@@ -104,14 +122,14 @@
                 <div class="container flex justify-center">
                     <div id="formation_article_content" class="article_content width60">
                         <p class="article_content_text">
-                            Tout au long de ma formation, j'ai eu l'opportunité de participer à plusieurs projets touchants à des domaines différents.
-                            Tous ces projets ont été réalisés dans le cadre de ma formation depuis ma première année de BUT.
+                            Tout au long de mon parcours, j'ai eu l'opportunité de participer à plusieurs projets touchants à des domaines différents.
+                            Tous ces projets ont été réalisés dans le cadre de ma formation depuis ma première année de BUT ou pendant mes périodes en entreprise.
                             <br><br>Ces projets m'ont permis de développer mes compétences dans divers domaines de l'informatique et de découvrir de nouvelles technologies.
                             <br><br>Pour la plupart, ces projets ont été réalisés en équipe, ce qui m'a également permis d'aiguiser ma compétence à travailler en équipe et mon organisation.
                             <br><br>Vous trouverez ci-dessous une liste des projets auxquels j'ai participé.  
                         </p>
                     </div>
-                    <div>
+                    <div data-lg-reveal="fade-to-left">
                         <div id="avatar_form">
                             <div id="img_form2">
                                 <img id="img_space" alt="Avatar Maxime Dardenne" src="assets/ressources/images/space_project.png">
@@ -127,38 +145,341 @@
 
         <section class="section__projets" id="projets">
 
-            <div class="title">
+            <div data-lg-reveal="fade-to-top" class="title">
                 <h2>Mes projets</h2>
                 <span>Mes réalisations</span>    
-            </div>
+            </div> 
+            <div class="test">
+                <div class="dynamic-background"></div>
 
-            <div class="liste_projets_container">
+                <div class="liste_projets">
+                    <button id="drawer-btn" class="hidden">
+                        <span class="text">➔</span>
+                    </button>
+
+                    <div id="skills-panel" class="skills-panel">
+                        <!-- Liste des compétences -->
+                        <div class="skill" data-skill="Réaliser">
+                            <img src="assets/ressources/images/Realiser_img.jpg" alt="Réaliser">
+                            <h3>Réaliser</h3>
+                        </div>
+                        <div class="skill" data-skill="Optimiser">
+                            <img src="assets/ressources/images/Optimiser_img.jpg" alt="Optimiser">
+                            <h3>Optimiser</h3>
+                        </div>
+                        <!-- <div class="skill" data-skill="Administrer">
+                            <img src="assets/ressources/images/Administrer_img.jpg" alt="Administrer">
+                            <h3>Administrer</h3>
+                        </div>
+                        <div class="skill" data-skill="Gérer">
+                            <img src="assets/ressources/images/Gerer_img.jpg" alt="Gérer">
+                            <h3>Gérer</h3>
+                        </div> -->
+                        <!-- <div class="skill" data-skill="Conduire">
+                            <img src="assets/ressources/images/Conduire_img.jpg" alt="Conduire">
+                            <h3>Conduire</h3>
+                        </div> -->
+                        <div class="skill" data-skill="Collaborer">
+                            <img src="assets/ressources/images/Collaborer_img.jpg" alt="Collaborer">
+                            <h3>Collaborer</h3>
+                        </div>
+                        
+                    </div>
                 
+                    <div id="skill-details" class="skill-details">
+                        <div id="detail-réaliser" class="skill-detail hidden">
+                            <div class="skill-detail-title">
+                                <h2>Réaliser un développement d'application</h2>
+                            </div>
+                            <p><br>Créer des applications et des solutions adaptées aux besoins.</p>
+                            <div>
+                                <section>
+                                    <article>
+
+                                        <p><br>La compétence "Réaliser" reflète ma capacité à concevoir, développer et intégrer des solutions 
+                                            logicielles adaptées aux besoins spécifiques. Voici quelques exemples concrets de projets et 
+                                            compétences illustrant cette expertise : <br><br>
+
+                                            Développement en C : Réalisation d’un jeu de Puissance 4 en langage C, intégrant des algorithmes 
+                                            pour la gestion des règles du jeu, la validation des coups et l’interface utilisateur en console. 
+                                            Ce projet a renforcé mes compétences en programmation structurée et en gestion de projets de 
+                                            développement. <br><br>
+
+                                            <img src="assets/ressources/images/puissance4.png" alt="">
+                                            <br><br>
+                                            Création d'IHM en JavaFX : Conception d’une interface utilisateur pour une application logicielle, 
+                                            mettant en œuvre des principes de design intuitif et des architectures robustes en JavaFX. Ce 
+                                            projet a permis d’optimiser l’expérience utilisateur et d’explorer les possibilités du langage 
+                                            Java dans le cadre d’applications riches.<br><br>
+
+                                            Ces expériences et compétences reflètent ma capacité à mener des projets à bien, en m’appuyant 
+                                            sur des outils modernes et des méthodologies adaptées pour répondre efficacement aux attentes.
+                                        </p>
+                                        <p>
+                                            Un exemple marquant est un projet de groupe où nous avons développé une application complète 
+                                            utilisant ces technologies. Vous pouvez en apprendre davantage dans la section 
+                                            <a class="link" href="#detail-collaborer">Collaborer</a>.
+                                        </p>
+                                        <img></img>
+                                    </article>
+                                </section>
+                            </div>
+                        </div>
+                        <div id="detail-optimiser" class="skill-detail hidden">
+                            <div class="skill-detail-title"> 
+                                <h2>Optimiser des applications</h2>
+                            </div>
+                            <p>Améliorer les performances et l'efficacité des systèmes.</p>
+                            <br><br>
+                            <p>Tout au long de mon parcours, l'optimisation d'applications existantes est une chose que j'ai régulièrement été ammené à faire.
+                                Par exemple, lors de ma première année de BUT j'ai développé un jeu de puissance 4 en <b>langage C</b>, ce qui m'a initié à la programmation structurée. Et suite
+                                à ce projet, j'ai dû développer un bot qui était capable de jouer contre moi. J'ai donc dû optimiser mon code pour que le bot puisse jouer de manière efficace, puis de le rendre plus puissant pour qu'il réussisse à vaincre les autres joueurs.
+                                <br><br>Un autre exemple est l'application de gestion de devis pour les réparations de routes départementales que je développe dans mon entreprise. Cette application est utilisée par les agents du département pour gérer les devis des entreprises
+                                 qui interviennent sur les routes. J'ai dû optimiser cette application pour qu'elle soit plus rapide et plus efficace pour les utilisateurs.
+                                 Cette application est développée en <b>PHP</b>, avec <b>Symfony</b>, ce qui me permet de découvrir un environnement complet avec une base de données <b>MySQL</b> via <b>PHPMyAdmin</b> et un serveur web sous <b>Laragon</b>.
+                                 Je suis également entrain de travailler sur la mise en place de <b>Docker</b> dans mon entreprise pour faciliter le déploiement de l'application.
+                            </p>
+                            <br><br>
+                            
+                            <div class="logo-band">
+                                <div class="logo-slider">
+                                  <img src="assets/ressources/images/CSS3.png" alt="HTML Logo">
+                                  <img src="assets/ressources/images/docker.png" alt="CSS Logo">
+                                  <img src="assets/ressources/images/symfony.png" alt="JavaScript Logo">
+                                  <img src="assets/ressources/images/JavaScript.png" alt="Java Logo">
+                                  <img src="assets/ressources/images/PHP.webp" alt="Python Logo">
+                                  <img src="assets/ressources/images/python.png" alt="Docker Logo">
+                                  <img src="assets/ressources/images/HTML5.png" alt="GitHub Logo">
+                                  <img src="assets/ressources/images/postgresql.png" alt="HTML Logo">
+                                  <img src="assets/ressources/images/Visual_Studio_Code.png" alt="CSS Logo">
+                                  <img src="assets/ressources/images/MySQL.png" alt="CSS Logo">
+                                  <img src="assets/ressources/images/Bootstrap.png" alt="Bootstrap Logo">
+                                  <img src="assets/ressources/images/C.png" alt="C Logo">
+                                  <img src="assets/ressources/images/github.png" alt="GitHub Logo">
+                                  <img src="assets/ressources/images/VueJS.png" alt="VueJS Logo">
+                                  <img src="assets/ressources/images/twig.png" alt="Twig Logo">
+
+
+
+                                  <img src="assets/ressources/images/CSS3.png" alt="HTML Logo">
+                                  <img src="assets/ressources/images/docker.png" alt="CSS Logo">
+                                  <img src="assets/ressources/images/symfony.png" alt="JavaScript Logo">
+                                  <img src="assets/ressources/images/JavaScript.png" alt="Java Logo">
+                                  <img src="assets/ressources/images/PHP.webp" alt="Python Logo">
+                                  <img src="assets/ressources/images/python.png" alt="Docker Logo">
+                                  <img src="assets/ressources/images/HTML5.png" alt="GitHub Logo">
+                                  <img src="assets/ressources/images/postgresql.png" alt="HTML Logo">
+                                  <img src="assets/ressources/images/Visual_Studio_Code.png" alt="CSS Logo">
+                                  <img src="assets/ressources/images/MySQL.png" alt="CSS Logo">
+                                  <img src="assets/ressources/images/Bootstrap.png" alt="Bootstrap Logo">
+                                  <img src="assets/ressources/images/C.png" alt="C Logo">
+                                  <img src="assets/ressources/images/github.png" alt="GitHub Logo">
+                                  <img src="assets/ressources/images/VueJS.png" alt="VueJS Logo">
+                                  <img src="assets/ressources/images/twig.png" alt="Twig Logo">
+                                </div>
+                              </div>
+                              
+                        </div>
+                        <div id="detail-administrer" class="skill-detail hidden">
+                            <div class="skill-detail-title">
+                                <h2>Administrer des systèmes informatiques</h2>
+                            </div>
+                            <p>Gérer les systèmes et les ressources informatiques.</p>
+                        </div>
+                        <div id="detail-gérer" class="skill-detail hidden">
+                            <div class="skill-detail-title">
+                                <h2>Gérer des données de l'information</h2>
+                            </div>
+                            <p>Gérer les systèmes et les ressources informatiques.</p>
+                        </div>
+                        <div id="detail-conduire" class="skill-detail hidden">
+                            <div class="skill-detail-title">
+                                <h2>Conduire un projet</h2>
+                            </div>
+                            <p>Conduire des projets de développement, de communication ou tout autre forme de projets</p>
+                        </div>
+                        <div id="detail-collaborer" class="skill-detail hidden">
+                            <div class="skill-detail-title">
+                                <h2>Collaborer au sein d'une équipe informatique</h2>
+                            </div>
+                            <p>
+                                Travailler en équipe m’a permis d’apprendre la communication, la répartition des tâches, 
+                                et la gestion des conflits. Voici un aperçu de notre projet de groupe :
+                            </p>
+                            <div style="display: flex; justify-content: space-between; margin-top: 2em;">
+                                <div style="width: 50%;">
+                                    <p>Ce projet a été réalisé en équipe de 6 en appliquant une méthode <b>AGILE</b>. Nous devions livrer un site de location de logement type <b>AirBnb</b>
+                                        <br><br>Dans ce projet, j'ai eu l'occasion d'adopter le rôle de <b>SCRUM Master</b>, ce qui m'a permis de développer mes compétences en gestion de projet et en communication.
+                                        <br><br>Ce site à était développé en <b>PHP</b>, <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, <b>Ajax</b> et <b>MySQL</b>, ce qui nous a permis d'éllaborer un projet complet quui comprends le maquettage, la charte graphique, le diagramme prévionnel et le cahier des charges.
+                                        J'ai également eu le rôle d'intégrer une carte interractive dans le site avec l'outil Leaflet.
+
+                                    
+                                    </p>
+                                </div>
+                                <div class="slider-container">
+                                    <div class="project-slider">
+                                        <div class="slider-wrapper">
+                                            <div class="slide"><img src="assets/ressources/images/AB_accueil.png" alt="Projet 1"></div>
+                                            <div class="slide"><img src="assets/ressources/images/AB_annonce.png" alt="Projet 2"></div>
+                                            <div class="slide"><img src="assets/ressources/images/AB_message.png" alt="Projet 3"></div>
+                                            <div class="slide"><img src="assets/ressources/images/AB_profil.png" alt="Projet 4"></div>
+                                            <div class="slide"><img src="assets/ressources/images/AB_modif.png" alt="Projet 5"></div>
+                                        </div>
+                                        
+                                    </div>
+                                    <button class="prev-slide">&#10094;</button>
+                                    <button class="next-slide">&#10095;</button>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- <div class="skill-timeline">
+                                <div class="slider-wrapper">
+                                    <img src="assets/ressources/images/docker.png" alt="Docker">
+                                    <img src="assets/ressources/images/python.webp" alt="Python">
+                                    <img src="assets/ressources/images/java.png" alt="Java">
+                                    <img src="assets/ressources/images/CSS3.png" alt="CSS3">
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
             
             
+
+
+        </section>
+
+        
+        <section class="section__contact" id="me_contacter"></section>
+
+            <div data-lg-reveal="fade-to-top" class="title">
+                <h2>Discutons !</h2>
+                <span>Me contacter</span>
+            </div>
+            <div class="contact_container">
+                
+                <form>
+                        <!-- Name -->
+                        <div class="form-group position-relative">
+                            <label for="formName" class="formName d-block">
+                            </label>
+                            <input type="text" id="formName" class="form-control form-control-lg thick" placeholder="Nom">
+                        </div>
+            
+                        <!-- E-mail -->
+                        <div class="form-group position-relative">
+                            <label for="formEmail" class="formEmail d-block">
+                                
+                            </label>
+                            <input type="email" id="formEmail" class="form-control form-control-lg thick" placeholder="E-mail">
+                        </div>
+            
+                        <!-- Message -->
+                        <div class="form-group message">
+                            <textarea id="formMessage" class="form-control form-control-lg" rows="7" placeholder="Contenu du message"></textarea>
+                        </div>
+                    
+                        <!-- Submit btn -->
+                        
+                        <a id="sendMailLink" onclick="sendMail()">
+                            <button type="button">
+                                <span class="text">Envoyer un message</span>
+                            </button>
+                        </a>
+                        
+                </form>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="footer_container">
             <nav>
-                <ul>
-                    <li>
-                        <a href="https://www.linkedin.com/in/maxime-dardenne/" target="_blank">
-                            <img alt="Logo LinkedIn" src="assets/ressources/icon/logo_linkedin.svg">
+                <ul class="example-2">
+                    <li class="icon-content">
+                        <a
+                        href="https://www.linkedin.com/in/maxime-dardenne/"
+                        target="_blank"
+                        aria-label="LinkedIn"
+                        data-social="linkedin"
+                        >
+                        <div class="filled"></div>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-linkedin"
+                            viewBox="0 0 16 16"
+                            xml:space="preserve"
+                        >
+                            <path
+                            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                            fill="currentColor"
+                            ></path>
+                        </svg>
                         </a>
+                        <div class="tooltip">LinkedIn</div>
                     </li>
-                    <li>
-                        <a href="https://github.com/MaximeDrdn?tab=overview&from=2024-06-01&to=2024-06-07" target="_blank">
-                            <img alt="Logo GitHub" src="assets/ressources/icon/logo_github.svg">
+                    <li class="icon-content">
+                        <a href="https://github.com/MaximeDrdn?tab=overview&from=2024-06-01&to=2024-06-07" aria-label="GitHub" data-social="github" target="_blank">
+                        <div class="filled"></div>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-github"
+                            viewBox="0 0 16 16"
+                            xml:space="preserve"
+                        >
+                            <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                            fill="currentColor"
+                            ></path>
+                        </svg>
                         </a>
+                        <div class="tooltip">GitHub</div>
                     </li>
                 </ul>
+
             </nav>
-            <div>&copy; Maxime Dardenne - 2023</div>
+            <div>&copy; Maxime Dardenne - 2025</div>
         </div>
     </footer>
     
     <script src="assets/ressources/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="assets/ressources/luge.js"></script>
+    <script>
+        function sendMail() {
+            const name = document.getElementById('formName').value;
+            const email = document.getElementById('formEmail').value;
+            const message = document.getElementById('formMessage').value;
+    
+            // Validation simple
+            if (!name || !email || !message) {
+                alert('Veuillez remplir tous les champs.');
+                return;
+            }
+    
+            // Préparer l'URL mailto
+            const subject = encodeURIComponent("Portfolio - Nouveau message de " + name);
+            const body = encodeURIComponent(`Nom: ${name}\nE-mail: ${email}\nMessage: ${message}`);
+            const mailtoLink = `mailto:dardennemaxime.pro@gmail.com?subject=${subject}&body=${body}`;
+    
+            // Ouvrir le client de messagerie
+            window.location.href = mailtoLink;
+        }
+    </script>
+    
+   
+
+    
 </body>

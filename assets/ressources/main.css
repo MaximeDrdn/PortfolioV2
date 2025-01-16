@@ -67,6 +67,7 @@
 
 html, body {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* TITRES */
@@ -111,6 +112,8 @@ p {
 .width60 {
     width: 60%;
 }
+
+
 
 /* HEADER */
 
@@ -158,12 +161,19 @@ header {
 }
 
 .header-white ul li a:hover {
-    color: black;
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.header-white ul li .menu::before, .header-white ul li .menu::after {
+.header-white ul li .menu::before {
     background-color: black;
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+}
 
+.header-white ul li .menu::after {
+    background-color: black;
+    background-image: linear-gradient(144deg,#00ddeb, #5b42f3 50%,  #af40ff);
 }
 
 .header__div {
@@ -260,7 +270,7 @@ header {
 
     border-radius: var(--radius-size);
 
-    height: 40em;
+    height: 50em;
     width: 100%;
 
     position: relative;
@@ -288,6 +298,20 @@ header {
     z-index: 4;
     font-family: 'montserrat-semibold-italic', sans-serif;
 }
+
+.hero_header h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    display: flex;
+}
+
+.hero_header h1 span {
+    display: inline-block; /* Pour permettre les animations individuelles */
+}
+
+
+
+
 /* HERO HEADER */
 
 .title {
@@ -339,6 +363,7 @@ header {
     justify-content: center;
     text-align: center;
     margin-bottom: 2em;
+    width: 100%;
 
 }
 
@@ -373,6 +398,7 @@ header {
     height: 350px;
     width: 350px;
     border-radius: 63% 37% 63% 37% / 36% 31% 69% 64% ;
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
     background-color: black;
 }
 p a.link {
@@ -413,21 +439,11 @@ p a.link:hover::after {
 
 
 .download_button {
-    background-color: black;
-    color: white;
-    border: solid 1px black;
-    padding: 1em;
     text-decoration: none;
-    font-family: 'montserrat-regular', sans-serif;
 }
 
 .download_button:hover {
-    background-color: white;
-    color: black;
-    border: solid 1px black;
-    padding: 1em;
     text-decoration: none;
-    font-family: 'montserrat-regular', sans-serif;
 }
 
 
@@ -436,50 +452,397 @@ p a.link:hover::after {
 
 /* PROJETS */
 
+.section__projets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
 #img_space {
     height: 350px;
     width: 350px;
     position: relative;
     z-index: 1;
     top: -40px;
+    left: -22px;
 }
 
 #img_form2 {
     height: 300px;
     width: 300px;
     border-radius: 63% 37% 63% 37%  / 61% 54% 46% 39% ;
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
     background-color: black;
 }
 
+.test {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
+
+.dynamic-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.dynamic-background img {
+    position: absolute;
+    width: 50px;
+    opacity: 0.9;
+    animation: moveLogo 10s linear infinite;
+    will-change: transform;
+}
+
+@keyframes moveLogo {
+    0% {
+        transform: translate(var(--start-x), var(--start-y));
+    }
+    100% {
+        transform: translate(var(--end-x), var(--end-y));
+    }
+}
 
 
 /*Liste de projet*/
 
 
-
-
-
-.liste_projets_container ul li {
-    height: 10em;
-    background-color: var(--grey-level-2);
+/* Style pour le slider de logos (Réaliser) */
+.tool-slider {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin: 20px auto;
 }
+.tool-slider .slider-wrapper {
+    display: flex;
+    animation: slide 10s linear infinite;
+}
+.tool-slider img {
+    width: 80px;
+    height: 80px;
+    margin: 0 10px;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Style pour le slider de projets (Collaborer) */
+.project-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px; /* Réduction de la taille du slider */
+    margin: 20px auto;
+    border-radius: var(--radius-size);
+}
+.project-slider .slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.project-slider .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+.project-slider img {
+    width: 100%;
+    height: auto; /* Ajuste la hauteur proportionnelle à la largeur */
+    object-fit: cover;
+    display: block;
+}
+.slider-container button {
+    position: absolute;
+    top: 55%;
+    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    max-width: none;
+    min-width: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Garde les boutons au-dessus du slider */
+}
+.slider-container .prev-slide {
+    margin-left: 5px; /* Boutons ajustés pour apparaître dans le bloc */
+}
+.slider-container .next-slide {
+    margin-left: 555px; /* Boutons ajustés pour apparaître dans le bloc */
+}
+
+.slider-container {
+    width: 600px;
+    margin-right: 2em;
+    border-radius: var(--radius-size);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* Conteneur principal */
+.logo-band {
+    width: 100%;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Slider contenant les logos */
+  .logo-slider {
+    display: flex;
+    animation: scroll 15s linear infinite;
+  }
+  
+  /* Logos individuels */
+  .logo-slider img {
+    width: 80px;
+    height: auto;
+    margin: 0 15px;
+    object-fit: contain;
+  }
+  
+  /* Animation pour faire défiler les logos */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+
+
+
+
+.liste_projets{
+    display: flex;
+    margin-bottom: 25em;
+    margin-top: 5em;
+}
+
+.skill {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 205px;
+    width: 19em;
+    background-color: var(--grey-level-6);
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+}
+
+.skill img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.skill h3 {
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 1);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: color 0.3s ease;
+    width: 98%;
+    height: 23%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Liste des projets (adaptée avec animation de glissement) */
+.skills-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Animation pour le slide et le fondu */
+    position: relative;
+    opacity: 1;
+    transform: translateX(0);
+}
+.skills-panel.hidden {
+    transform: translateX(-150%); /* Glissement vers la gauche */
+    opacity: 0; /* Disparaît progressivement */
+}
+
+.skill-detail {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    width: 90%;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    visibility: hidden; /* Cache visuellement */
+}
+
+.skill-detail.show {
+    transform: translateX(-50%);
+    opacity: 1;
+    visibility: visible; /* Devient visible avec la transition */
+}
+
+.skill-detail-title img {
+    width: 3em;
+    height: 3em;
+}
+
+.skill-detail-title {
+    display: flex;
+    align-items: center;
+}
+
+#drawer-btn {
+    position: absolute;
+    left: -8px;
+    height: 50px;
+    transform: translateY(250%);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 100;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Masqué initialement */
+    min-width: 0 ;
+    max-width: none;
+    font-size: 12px;
+}
+
+#drawer-btn span {
+    padding: 16px;
+}
+
+#drawer-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#drawer-btn.show {
+    opacity: 1; /* Apparition progressive */
+    pointer-events: auto;
+}
+
+/* Transitions au hover */
+.skill:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover h3 {
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 
 .compétences h2{
     font-family: 'montserrat-regular', sans-serif;
 }
 
-.img1 {
-    height: 8em;
-    width: 8em;
-}
 
-.img2 {
-    height: 8em;
-    width: 8em;
-}
 
 /* PROJETS */
+
+/* CONTACT */
+
+.contact_container {
+	margin: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+	min-width: 25rem;
+}
+	
+
+.form-group {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    padding: 1em;
+
+}
+
+.form-group input {
+    padding: 1em;
+    width: 100%;
+}
+
+.form-group textarea {
+    padding: 1em;
+    width: 100%;
+}
+
+.formName, .formEmail {
+    display: block;
+}
+
+.form-control {
+    background-color: #f2f6f8;
+    border-radius: var(--radius-size);
+    border: none;
+    box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.11);
+}
+	
+.message .form-control {
+    padding: .5rem 1.8rem;
+}
+	
+form::placeholder {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #838788;
+    position: relative;
+    left: 0;
+}
+	
+input, textarea {
+    font-family: 'Quicksand', sans-serif;
+color: #212529;
+font-size: 1.1rem;
+}
+	
 
 /* FOOTER */
 
@@ -487,6 +850,8 @@ footer {
     background-color: black;
     text-align: center;
     font-family: 'montserrat-regular';
+    bottom: 0;
+    position: relative;
 
 }
 
@@ -507,7 +872,6 @@ footer .footer_container nav {
 }
 
 footer .footer_container nav ul {
-    width: 10%;
     display: flex;
     justify-content: space-around;
 }
@@ -525,6 +889,155 @@ footer .footer_container nav ul li a img {
 footer div {
     color: white;
 }
+
+
+
+
+/* From Uiverse.io by wilsondesouza */ 
+ul {
+    list-style: none;
+  }
+  
+  .example-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .example-2 .icon-content {
+    margin: 0 10px;
+    position: relative;
+  }
+  .example-2 .icon-content .tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  .example-2 .icon-content:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -50px;
+  }
+  .example-2 .icon-content a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #4d4d4d;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+  .example-2 .icon-content a:hover {
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+  }
+  .example-2 .icon-content a svg {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+  }
+  .example-2 .icon-content a:hover {
+    color: white;
+  }
+  .example-2 .icon-content a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+  }
+  .example-2 .icon-content a:hover .filled {
+    height: 100%;
+  }
+  
+  .example-2 .icon-content a[data-social="linkedin"] .filled,
+  .example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+    background-color: #0274b3;
+  }
+  
+  .example-2 .icon-content a[data-social="github"] .filled,
+  .example-2 .icon-content a[data-social="github"] ~ .tooltip {
+    background-color: #24262a;
+  }
+  .example-2 .icon-content a[data-social="instagram"] .filled,
+  .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+    background: linear-gradient(
+      45deg,
+      #405de6,
+      #5b51db,
+      #b33ab4,
+      #c135b4,
+      #e1306c,
+      #fd1f1f
+    );
+  }
+  .example-2 .icon-content a[data-social="youtube"] .filled,
+  .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+    background-color: #ff0000;
+  }
+
+  
+  /* From Uiverse.io by cssbuttons-io */ 
+button {
+    align-items: center;
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  button:active,
+  button:hover {
+    outline: 0;
+  }
+  
+  button span {
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+  }
+  
+  button:hover span {
+    background: none;
+  }
+  
+  button:active {
+    transform: scale(0.9);
+  }
+  
 
 /* FOOTER */
 
