@@ -116,9 +116,53 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const experiencePanel = document.getElementById("experience-panel");
+    const drawerBtn2 = document.getElementById("drawer-btn2");
+    const dynamicBackground = document.querySelector(".dynamic-background");
+
+    // Gestion des clics sur chaque expérience
+    document.querySelectorAll(".experience").forEach(experience => {
+        experience.addEventListener("click", () => {
+            const experienceName = experience.classList[1]; // Utilise la deuxième classe pour identifier l'expérience
+
+            // Cache le panneau principal des expériences
+            experiencePanel.classList.add("hidden");
+            dynamicBackground.style.display = "none";
+
+            // Affiche le bouton pour revenir en arrière
+            drawerBtn2.classList.add("show");
+
+            // Affiche le détail correspondant
+            const activeDetail = document.querySelector(`.experience-detail.${experienceName}`);
+            if (activeDetail) {
+                activeDetail.classList.add("show");
+            }
+        });
+    });
+
+    // Bouton pour revenir à la liste des expériences
+    drawerBtn2.addEventListener("click", () => {
+        // Cache les détails des expériences
+        document.querySelectorAll(".experience-detail").forEach(detail => {
+            detail.classList.remove("show");
+        });
+
+        // Réaffiche le panneau principal des expériences
+        experiencePanel.classList.remove("hidden");
+
+        // Cache le bouton pour revenir en arrière
+        drawerBtn2.classList.remove("show");
+
+        // Réaffiche le fond dynamique
+        dynamicBackground.style.display = "block";
+    });
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const background = document.querySelector(".dynamic-background");
-    const logos = ["docker.png", "python.webp", "C.png", "CSS3.png", "github.png", "HTML5.png", "java.png", "JavaScript.png", "PHP.webp", "PhpMyAdmin.png", "PuTTY.png", "symfony.png", "Visual_Studio_Code.png"]; // Remplacez par vos logos
+    const logos = ["docker.png", "python.webp", "C.png", "CSS3.png", "github.png", "HTML5.png", "java.png", "JavaScript.png", "PHP.webp", "PhpMyAdmin.png", "PuTTY.png", "symfony.png", "Visual_Studio_Code.png", "VueJS.png", "twig.png", "MySQL.png", "Bootstrap.png"]; // Remplacez par vos logos
 
     function generatePositionOutside() {
         const side = Math.floor(Math.random() * 4);

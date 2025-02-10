@@ -21,6 +21,63 @@
 
 </head>
 
+<!-- Pop-up de confirmation -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <img src="https://media.giphy.com/media/kVJtKTSXH0MeNw7tHu/giphy.gif" alt="Message envoyé">
+        <p>Votre message a été envoyé avec succès !</p>
+        <button onclick="closePopup()">Fermer</button>
+    </div>
+</div>
+
+<style>
+    /* Style de la pop-up */
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .popup-content {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 0.3s;
+    }
+
+    .popup img {
+        width: 100px;
+        height: auto;
+    }
+
+    .popup button {
+        margin-top: 10px;
+        padding: 8px 15px;
+        border: none;
+        background: #28a745;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .popup button:hover {
+        background: #218838;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.8); }
+        to { opacity: 1; transform: scale(1); }
+    }
+</style>
+
+
 <body>
 
     <header>
@@ -70,7 +127,7 @@
             
         </div>
 
-        <section class="section__presentation"  id="presentation">
+        <section class="section__presentation grey_background"  id="presentation">
             <div data-lg-reveal="fade-to-top" class="title">
                 <h2>Qui suis-je ?</h2>
                 <span>Présentation</span>
@@ -143,7 +200,7 @@
         </section>
 
 
-        <section class="section__projets" id="projets">
+        <section class="section__projets grey_background" id="projets">
 
             <div data-lg-reveal="fade-to-top" class="title">
                 <h2>Mes projets</h2>
@@ -352,45 +409,109 @@
 
         </section>
 
+        <section class="section__experience" id="mes_experiences">
+            <div data-lg-reveal="fade-to-top" class="title">
+                <h2>Professionnel</h2>
+                <span>Mes expériences</span>
+            </div>
         
-        <section class="section__contact" id="me_contacter"></section>
+            <div class="test">
+                <div class="liste_experiences">
+                    <!-- Bouton pour revenir en arrière -->
+                    <button id="drawer-btn2" class="hidden">
+                        <span class="text">➔</span>
+                    </button>
+        
+                    <!-- Panneau des expériences -->
+                    <div id="experience-panel" class="experience-panel">
+                        <div class="experience marki">
+                            <img src="assets/ressources/images/Marki.png" alt="Marki">
+                            <h3>Agence Marki</h3>
+                        </div>
+                        <div class="experience jura">
+                            <img src="assets/ressources/images/jura2.png" alt="Conseil Départemental du Jura">
+                            <h3>Conseil Départemental du Jura</h3>
+                        </div>
+                    </div>
+        
+                    <!-- Détails des expériences -->
+                    <div id="experience-details" class="experience-details">
+                        <div class="experience-detail marki hidden">
+                            <div class="experience-detail-title">
+                                <h2>Agence Marki</h2>
+                            </div>
+                            <p>Voici les détails de mon expérience chez Marki.</p>
+                        </div>
+                        <div class="experience-detail jura hidden">
+                            <div class="experience-detail-title">
+                                <h2>Conseil Départemental du Jura</h2>
+                            </div>
+                            <p>Voici les détails de mon expérience au Conseil Départemental du Jura.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        
+        <section class="section__contact grey_background" id="me_contacter">
 
             <div data-lg-reveal="fade-to-top" class="title">
                 <h2>Discutons !</h2>
                 <span>Me contacter</span>
             </div>
             <div class="contact_container">
-                
-                <form>
-                        <!-- Name -->
-                        <div class="form-group position-relative">
-                            <label for="formName" class="formName d-block">
-                            </label>
-                            <input type="text" id="formName" class="form-control form-control-lg thick" placeholder="Nom">
-                        </div>
-            
-                        <!-- E-mail -->
-                        <div class="form-group position-relative">
-                            <label for="formEmail" class="formEmail d-block">
-                                
-                            </label>
-                            <input type="email" id="formEmail" class="form-control form-control-lg thick" placeholder="E-mail">
-                        </div>
-            
-                        <!-- Message -->
-                        <div class="form-group message">
-                            <textarea id="formMessage" class="form-control form-control-lg" rows="7" placeholder="Contenu du message"></textarea>
-                        </div>
-                    
-                        <!-- Submit btn -->
-                        
-                        <a id="sendMailLink" onclick="sendMail()">
-                            <button type="button">
-                                <span class="text">Envoyer un message</span>
-                            </button>
-                        </a>
-                        
+
+                <form id="contact-form">
+                    <div class="form-group position-relative">
+                        <label for="formName" class="formName d-block">
+                        </label>
+                        <input type="text" name="name" id="formName" class="form-control form-control-lg thick" placeholder="Nom">
+                    </div>
+                    <div class="form-group position-relative">
+                        <label for="formEmail"  class="formEmail d-block">
+                            
+                        </label>
+                        <input type="email" name="email" id="formEmail" class="form-control form-control-lg thick" placeholder="E-mail">
+                    </div>
+                    <div class="form-group message">
+                        <textarea id="formMessage" name="message" class="form-control form-control-lg" rows="7" placeholder="Contenu du message"></textarea>
+                    </div>
+                    <button type="submit">
+                        <span class="text">Envoyer un message</span>
+                    </button>
                 </form>
+                
+                <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+                <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    emailjs.init("wYh79ZcFbs1bZAVDI"); // Remplace par ta clé publique EmailJS
+
+                    document.getElementById("contact-form").addEventListener("submit", function(event) {
+                        event.preventDefault(); // Empêche le rechargement de la page
+
+                        emailjs.sendForm("MaximedrdnMailService", "template_g1ql3yv", this)
+                            .then(function() {
+                                // Ouvrir la pop-up
+                                document.getElementById("popup").style.display = "flex";
+
+                                // Réinitialiser les champs du formulaire
+                                document.getElementById("contact-form").reset();
+                            }, function(error) {
+                                alert("Erreur lors de l'envoi du message.");
+                                console.error("EmailJS Error:", error);
+                            });
+                    });
+                });
+
+                // Fonction pour fermer la pop-up
+                function closePopup() {
+                    document.getElementById("popup").style.display = "none";
+                }
+
+                </script>
+                
             </div>
         </section>
     </main>
